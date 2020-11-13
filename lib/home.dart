@@ -1,3 +1,4 @@
+import 'package:fernsoutheast/register.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -25,15 +26,19 @@ class _HomeState extends State<Home> {
               buildTextFieldUser(),
               buildTextFieldPassword(),
               buildLogin(),
-              TextButton(
-                onPressed: (){}, 
-                child: Text('New Register'),
-              )
+              buildTextButton()
             ],
           ),
           ),
       ),
     );
+  }
+
+  TextButton buildTextButton() {
+    return TextButton(
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Register(),)), 
+              child: Text('New Register'),
+            );
   }
 
   Container buildLogin() {
